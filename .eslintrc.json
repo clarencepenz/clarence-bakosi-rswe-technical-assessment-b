@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": ["./tsconfig.json", "./*.js"]
+  },
+  "ignorePatterns": ["**/components/ui/*.tsx"],
+  "rules": {
+    "import/extensions": "off",
+    "@typescript-eslint/quotes": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-danger": "off"
+  }
+}
