@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 "use client";
 
 import * as React from "react";
@@ -23,19 +21,19 @@ const components: {
     items: [
       {
         title: "Alert Dialog",
-        href: "/docs/primitives/alert-dialog",
+        href: "/",
         description:
           "A modal dialog that interrupts the user with important content and expects a response.",
       },
       {
         title: "Hover Card",
-        href: "/docs/primitives/hover-card",
+        href: "/",
         description:
           "For sighted users to preview content available behind a link.",
       },
       {
         title: "Progress",
-        href: "/docs/primitives/progress",
+        href: "/",
         description:
           "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
       },
@@ -60,31 +58,35 @@ const components: {
   },
 ];
 
-const ListItem = React.forwardRef<
-React.ElementRef<"a">,
-React.ComponentPropsWithoutRef<"a">
->(({
-  className, title, children, ...props
-}, ref) => (
-  <li>
-    <NavigationMenuLink asChild>
-      <a
-        ref={ref}
-        className={cn(
-          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-          className,
-        )}
-        {...props}
-      >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-          {children}
-        </p>
-      </a>
-    </NavigationMenuLink>
-  </li>
-));
-ListItem.displayName = "ListItem";
+type Props = {
+  title: string;
+  href: string;
+  children: React.ReactNode;
+};
+
+const ListItem = React.forwardRef(
+  (
+    { title, children, ...props }: Props,
+    ref: React.LegacyRef<HTMLAnchorElement> | undefined,
+  ) => (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  ),
+);
 
 export default function NavbarItem() {
   return (
