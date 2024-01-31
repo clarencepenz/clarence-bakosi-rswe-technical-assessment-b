@@ -13,7 +13,7 @@ type CardProps = {
     coverImage?: string;
     title_trunc: string;
     tag: string;
-    isFeatured?: boolean;
+    is_featured?: boolean;
   };
 };
 
@@ -32,7 +32,7 @@ export default function RelatedArticleCard({ data }: CardProps) {
         <Badge
           className={cn(
             "text-evfy-primary uppercase text-xs font-semibold rounded-sm",
-            data.isFeatured
+            data.is_featured
               ? "bg-evfy-outline"
               : "px-0 bg-transparent hover:bg-transparent",
           )}
