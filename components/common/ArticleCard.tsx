@@ -23,13 +23,11 @@ export default function ArticleCard({ data }: CardProps) {
     <Card className="border border-none outline-none bg-transparent shadow-none transition-colors hover:text-evfy-primary/80 cursor-pointer">
       <CardContent className="p-0 h-auto md:h-[223px]">
         <Image
-          src={
-            data.coverImage
-            ?? PREVIEW_IMAGE("image_one")
-          }
+          src={data.coverImage ?? PREVIEW_IMAGE("image_one")}
           alt={data.title}
           height={223}
           width={382.638}
+          className="h-full w-full"
         />
       </CardContent>
       <CardHeader className="px-0">
