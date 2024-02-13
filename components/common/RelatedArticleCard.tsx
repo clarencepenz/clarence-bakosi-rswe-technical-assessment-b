@@ -31,7 +31,7 @@ export default function RelatedArticleCard({ data }: CardProps) {
       <CardHeader className="px-0 py-0 block">
         <Badge
           className={cn(
-            "text-evfy-primary uppercase text-xs font-semibold rounded-sm hover:bg-inherit",
+            "text-evfy-primary uppercase text-xs font-semibold rounded-sm hover:bg-outline",
             data.is_featured
               ? "bg-evfy-outline"
               : "px-0 bg-transparent",
