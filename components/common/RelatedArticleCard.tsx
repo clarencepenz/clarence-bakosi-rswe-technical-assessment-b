@@ -31,10 +31,10 @@ export default function RelatedArticleCard({ data }: CardProps) {
       <CardHeader className="px-0 py-0 block">
         <Badge
           className={cn(
-            "text-evfy-primary uppercase text-xs font-semibold rounded-sm",
+            "text-evfy-primary uppercase text-xs font-semibold rounded-sm hover:bg-inherit",
             data.is_featured
               ? "bg-evfy-outline"
-              : "px-0 bg-transparent hover:bg-transparent",
+              : "px-0 bg-transparent",
           )}
         >
           {data.tag}
